@@ -1,0 +1,46 @@
+---
+title: "Documentation for NHDS Age by Sex Shiny Application"
+author: "Ian Fisher"
+date: "20 May 2016"
+output: html_document
+runtime: shiny
+---
+##Introduction
+This Shiny app is designed to display the distribution of age by sex for the 10 most common diagnoses found in the US National Hospital Discharge Survey (NHDS) datasets between 2006 and 2010. The app also calculates the median age of patients whose discharge notes included the diagnosis selected.
+###Data Preparation
+The NHDS datasets are freely available via:
+
+ftp://ftp.cdc.gov/pub/Health_Statistics/NCHS/Datasets/NHDS/. 
+
+Documentation outlining the structure and use of the raw data may be found there too.
+
+These datasets, one each for years 2006 to 2010, inclusive, include data on the demographics, diagnoses and procedures experienced by patients across a representative sample of US hospitals. Due to HIPPA constraints, the data exists at a single line per discharge level, rather than single line per patient level. 
+
+The diagnosis data is coded using International Classification of Disease 9 (ICD9) terminology. To obtain the text descriptions of the code, ICD9 data was downloaded from:
+
+https://www.cms.gov/medicare/coding/ICD9providerdiagnosticcodes/codes.html
+
+and merged with the NHDS data. This was done by using the melt function from the plyr package to transform the data to single line per discharge per diagnosis, then merging the text description of the diagnosis to the diagnosis data by ICD9 code.
+
+The resulting dataset is large (>472MB) and would prove too large for the purposes of this coursera assignment as the run time of the app would be significantly impaired if all preprocessing were included in the server.R file. Consequently, the 10 most common diagnoses in the dataset were identified this:
+
+```{r eval=FALSE}
+nhds<-read.csv("./data/nhds.csv")
+
+nhds<-rename(nhds,c("value"="icd9code"))
+
+mike<-ddply(nhds,"LONG_DESCRIPTION",summarise,dx_cnt=length(X))
+
+mike$rankdx<-rank(-mike$dx_cnt,ties.method="first")
+
+mike1<-as.vector(mike[which(mike$rankdx<=10),1])
+
+nhds2<-nhdsx[which(nhdsx$LONG_DESCRIPTION %in% mike1),]
+
+write.csv(nhds2,"./data/nhds_shiny.csv")
+```
+
+The resulting dataset nhds_shiny is then used to power the shiny app.
+
+###Using the app
+Simply select a diagnosis from the alphabetically order drop down list on the left hand side of the screen. On the right, a histogram is then generated using ggplot2 which illustrates the distribution of age for both male and female patients. Beneath the chart, the median age for all patients with the diagnosis is also displayed. The chart and median calculation are both reactive and will change each time a different diagnosis is chosen from the drop down list.
