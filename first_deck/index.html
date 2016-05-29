@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pitch for NHDS Age by Sex Shiny App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Pitch for NHDS Age by Sex Shiny App">
+  <meta name="author" content="Ian Fisher">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Pitch for NHDS Age by Sex Shiny App</h1>
+    <h2>Developing Data Products Assignment</h2>
+    <p>Ian Fisher<br/>Senior Scientific Advisor</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Background to NHDS data and uses</li>
+<li>Potential use cases</li>
+<li>Further development opportunities</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Background to NHDS data and uses</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The National Hospital Discharge Survey (NHDS), which was conducted annually from 1965-2010, was a national probability survey designed to meet the need for information on characteristics of inpatients discharged from non-Federal short-stay hospitals in the United States. </li>
+<li>Data from the NHDS are available annually and are used to examine important topics of interest in public health and for a variety of activities by governmental, scientific, academic, and commercial institutions.</li>
+<li>This Shiny app is designed to display the distribution of age by sex for the 10 most common diagnoses found in the US National Hospital Discharge Survey (NHDS) datasets between 2006 and 2010. </li>
+<li>The app also calculates the median age of patients whose discharge notes included the diagnosis selected.</li>
+<li><a href="http://www.cdc.gov/nchs/nhds/">NHDS Website</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Current app use</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>The current app asks users to select diseases from a drop down list of the 10 most common diagnoses, creating a histogram, split by sex, for the distribution of age for patient discharges including a diagnosis of that disease e.g.</li>
+</ul>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Further development opportunities</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Additional development of the app intends to expand the size of the dataset to include all diagnoses</li>
+<li>Furthermore, additional visualizations are plannned, including:</li>
+<li>1) charts outlining plots of concurrent medical procedures and health outcomes </li>
+<li>2) charts for inpatient referral scenarios</li>
+<li>3) charts for inpatient subsequent care scenarios</li>
+<li>With further support, hopefully these updates will be achievable</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Background to NHDS data and uses'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Current app use'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Further development opportunities'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
